@@ -1,0 +1,10 @@
+<li class="list-element">
+    <div appHightlight class="list-element__container">
+        <p> <span class="list-element--bold-text">Note title:</span> {{ note.title | uppercase }} </p>
+        <p> <span class="list-element--bold-text">Description:</span> {{ note.description }} </p>
+        <div class="list-element__buttons-container">
+            <button (click)="onEdit()">Edit</button>
+            <button (click)="onDelete(note)">Delete</button>
+        </div>
+    </div>
+</li>

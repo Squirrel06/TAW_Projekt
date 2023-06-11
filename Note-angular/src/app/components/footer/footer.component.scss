@@ -1,0 +1,13 @@
+.footer {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+}
+
+.line {
+    margin-top: 20px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
+}

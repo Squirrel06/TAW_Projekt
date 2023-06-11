@@ -1,0 +1,21 @@
+<nav class="navbar">
+    <div class="navbar__left">
+      <div class="navbar__button">
+        <a href="#" [routerLink]="['']">Home</a>
+      </div>
+      <div class="navbar__button" *ngIf="authService.isLoggedIn()">
+        <a href="#" [routerLink]="['todo']">Show data</a>
+      </div>
+    </div>
+    <div class="navbar__right">
+      <div class="navbar__button" *ngIf="!authService.isLoggedIn()">
+        <a href="#" [routerLink]="['signup']">Sing up</a>
+      </div>
+      <div class="navbar__button" *ngIf="!authService.isLoggedIn()">
+        <a href="#" [routerLink]="['signin']">Sign in</a>
+      </div>
+      <div class="navbar__button" *ngIf="authService.isLoggedIn()">
+        <a (click)="signOut()">Sing out</a>
+      </div>
+    </div>
+  </nav>

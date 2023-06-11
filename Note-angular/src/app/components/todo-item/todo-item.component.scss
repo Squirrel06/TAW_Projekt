@@ -1,0 +1,27 @@
+@use '../../shared/style.scss' as *;
+
+.list-element{
+    &__container {
+        @extend %display-center;
+        flex-direction: column;
+        min-width: 150px;
+        min-height: 120px;
+        background-color: white;
+        padding: 10px;
+        color: black;
+        border-radius: 20px;
+        margin: 10px;
+    }
+
+    &--bold-text {
+        font-weight: bold;
+    }
+
+    &--important-true {
+        border: 3px solid #ff00a6;
+    }
+
+    &--important-false {
+        border: 2px solid white;
+    }
+}

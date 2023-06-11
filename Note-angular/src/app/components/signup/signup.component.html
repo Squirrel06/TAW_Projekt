@@ -1,0 +1,24 @@
+<div class="edit">
+    <div class="form-container">
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="form-container__form-group">
+                <label for="name" class="form-container--label-text">Name</label>
+                <input type="text" id="name" formControlName="name" class="form-container--input-style-text">
+            </div>
+            <div class="form-container__form-group">
+                <label for="password" class="form-container--label-text">Password</label>
+                <input type="password" id="password" formControlName="password" class="form-container--input-style-text">
+            </div>
+            <div class="form-container__form-group">
+                <label for="email" class="form-container--label-text">Email</label>
+                <input type="email" id="email" formControlName="email" class="form-container--input-style-text">
+            </div>
+            <div class="form-container__button">
+                <button class="form-container--button-style" [disabled]="!signupForm.valid">Signup</button>
+            </div>
+        </form>
+        <span class="form-container--warning-block" *ngIf="!signupForm.valid">
+            Provide valid data for inputs fields to continue
+        </span>
+    </div>
+</div>

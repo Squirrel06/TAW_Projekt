@@ -1,0 +1,22 @@
+<div class="edit">
+    <div class="form-container">
+        <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+            <div class="form-container__form-group">
+                <label for="login" class="form-container--label-text">Name</label>
+                <input type="text" id="login" formControlName="login" class="form-container--input-style-text">
+            </div>
+            <div class="form-container__form-group">
+                <label for="password" class="form-container--label-text">Password</label>
+                <input type="password" id="password" formControlName="password" class="form-container--input-style-text">
+            </div>
+            
+            <div class="form-container__button">
+                <button class="form-container--button-style" [disabled]="!signinForm.valid">Signin</button>
+            </div>
+        </form>
+        <span class="form-container--warning-block" *ngIf="!signinForm.valid">
+            Provide valid data for inputs fields to continue
+        </span>
+    </div>
+</div>
+

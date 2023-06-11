@@ -1,0 +1,20 @@
+<div class="edit">
+    <div class="form-container">
+        <form [formGroup]="editNoteForm" (ngSubmit)="onSubmit()">
+            <div class="form-container__form-group">
+                <label for="note" class="form-container--label-text">Title</label>
+                <input type="text" id="note" formControlName="note" class="form-container--input-style-text">
+            </div>
+            <div class="form-container__form-group">
+                <label for="description" class="form-container--label-text">Description</label>
+                <input type="text" id="description" formControlName="description" class="form-container--input-style-text">
+            </div>
+            <div class="form-container__button">
+                <button class="form-container--button-style" [disabled]="!editNoteForm.valid">Edit Task</button>
+            </div>
+        </form>
+        <span class="form-container--warning-block" *ngIf="!editNoteForm.valid">
+            Provide valid data for inputs fields to continue
+        </span>
+    </div>
+</div>

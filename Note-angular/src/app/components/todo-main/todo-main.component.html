@@ -1,0 +1,23 @@
+<div class="todo-container">
+    <div class="form-container">
+        <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
+            <div class="form-container__form-group">
+                <label for="note" class="form-container--label-style">Note title</label>
+                <input type="text" id="note" class="form-container--input-style-text" formControlName="note"/>
+            </div>
+            <div class="form-container__form-group">
+                <label for="description" class="form-container--label-style">Description</label>
+                <input type="text" id="description" class="form-container--input-style-text" formControlName="description"/>
+            </div>
+            <div class="form-container__button-group">
+                <button class="form-container__button" [disabled]="!noteForm.valid">Add Task</button>
+            </div>
+        </form>
+    </div>
+    <span *ngIf="!noteForm.valid" class="form-container__warning-block">
+        Provide a valid data for inputs fields to continue
+    </span>
+    <div class="todo-container__items-list">
+        <app-todo-list></app-todo-list>
+    </div>
+</div>
