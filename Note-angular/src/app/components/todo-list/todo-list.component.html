@@ -2,9 +2,6 @@
 <div class="list-container">
     <div class="lds-ring" *ngIf="listLoading"><div></div><div></div><div></div><div></div></div>
     <div class="list-container__loading-data" *ngIf="!listLoading">
-        <div class="list-container__button">
-            <button (click)="deleteAll()" class="list-container--button-style">Delete all tasks</button>
-        </div>
         <ul class="list-container__items">
             <app-todo-item appHighlight *ngFor="let note of noteList" [note]="note" (deleteEmitter)="deleteOneTask($event)"></app-todo-item>
         </ul>
